@@ -32,11 +32,45 @@ body {
     border: 2px solid darkgreen;
     transition: all 0.05s linear;
     cursor: pointer;
+    position: relative;
 }
 
 .board__item:hover {
     background-color: #bbb;
 }
+
+.board__item--filled-X::before, 
+.board__item--filled-X::after {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background-color: green;
+
+}
+.board__item--filled-X::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.board__item--filled-X::after{
+    transform: translateY(-50%) rotate(45deg)
+}
+
+.board__item--filled-O::before {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    border: 15px solid  rgb(65, 100, 65);
+    width: 55%;
+    height: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 
 .reset-button {
     margin-top: 20px;
